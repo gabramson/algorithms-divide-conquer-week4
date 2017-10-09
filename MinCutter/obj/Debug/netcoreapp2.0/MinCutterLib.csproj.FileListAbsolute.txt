@@ -1,0 +1,9 @@
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\bin\Debug\netcoreapp2.0\MinCutterLib.deps.json
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\bin\Debug\netcoreapp2.0\MinCutterLib.dll
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\bin\Debug\netcoreapp2.0\MinCutterLib.pdb
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\obj\Debug\netcoreapp2.0\MinCutterLib.csproj.CoreCompileInputs.cache
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\obj\Debug\netcoreapp2.0\MinCutterLib.AssemblyInfoInputs.cache
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\obj\Debug\netcoreapp2.0\MinCutterLib.AssemblyInfo.cs
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\obj\Debug\netcoreapp2.0\MinCutterLib.dll
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\obj\Debug\netcoreapp2.0\MinCutterLib.pdb
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCutter\obj\Debug\netcoreapp2.0\MinCutterLib.csprojResolveAssemblyReference.cache

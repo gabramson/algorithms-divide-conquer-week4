@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinCut", "MinCut\MinCut.csproj", "{40EBC2ED-E20F-400E-A42B-E9808FFADB34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinCut", "MinCut\MinCut.csproj", "{40EBC2ED-E20F-400E-A42B-E9808FFADB34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinCutTest", "MinCutTest\MinCutTest.csproj", "{46D798BD-3ADA-46BB-9E0F-41DFEDA8DD03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinCutterLib", "MinCutter\MinCutterLib.csproj", "{E81D8A5D-26C5-462F-B7F1-CB68EC32179F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{40EBC2ED-E20F-400E-A42B-E9808FFADB34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40EBC2ED-E20F-400E-A42B-E9808FFADB34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40EBC2ED-E20F-400E-A42B-E9808FFADB34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D798BD-3ADA-46BB-9E0F-41DFEDA8DD03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D798BD-3ADA-46BB-9E0F-41DFEDA8DD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D798BD-3ADA-46BB-9E0F-41DFEDA8DD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D798BD-3ADA-46BB-9E0F-41DFEDA8DD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81D8A5D-26C5-462F-B7F1-CB68EC32179F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81D8A5D-26C5-462F-B7F1-CB68EC32179F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81D8A5D-26C5-462F-B7F1-CB68EC32179F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81D8A5D-26C5-462F-B7F1-CB68EC32179F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
