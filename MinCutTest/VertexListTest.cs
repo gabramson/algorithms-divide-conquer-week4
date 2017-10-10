@@ -7,8 +7,15 @@ namespace VertexListTest
     public class VertexListTest
     {
         [TestMethod]
-        public void VertexEdgeList()
+        public void TestVertexList()
         {
+            var vertexList = new VertexList();
+            vertexList.Add(1);
+            vertexList.Add(2);
+            vertexList.Add(3);
+            vertexList.AddNeighbor(1, 2);
+            Assert.IsTrue(vertexList.ContainsVertex(1));
+            var secondList = new VertexList(vertexList);
         }
     }
 }
