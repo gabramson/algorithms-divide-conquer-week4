@@ -9,3 +9,5 @@ D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCut\obj\Debug\netcore
 D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCut\obj\Debug\netcoreapp2.0\MinCut.AssemblyInfo.cs
 D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCut\obj\Debug\netcoreapp2.0\MinCut.dll
 D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCut\obj\Debug\netcoreapp2.0\MinCut.pdb
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCut\bin\Debug\netcoreapp2.0\MinCutterLib.dll
+D:\Projects\C#\Coursera\algorithms-divide-conquer\week4\MinCut\bin\Debug\netcoreapp2.0\MinCutterLib.pdb

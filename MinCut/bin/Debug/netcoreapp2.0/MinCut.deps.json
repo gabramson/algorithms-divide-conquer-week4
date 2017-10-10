@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "MinCut/1.0.0": {
+        "dependencies": {
+          "MinCutterLib": "1.0.0"
+        },
         "runtime": {
           "MinCut.dll": {}
+        }
+      },
+      "MinCutterLib/1.0.0": {
+        "runtime": {
+          "MinCutterLib.dll": {}
         }
       }
     }
   },
   "libraries": {
     "MinCut/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MinCutterLib/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

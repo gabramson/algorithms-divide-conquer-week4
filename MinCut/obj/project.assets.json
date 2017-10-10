@@ -196,6 +196,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "MinCutterLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/MinCutterLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MinCutterLib.dll": {}
+        }
       }
     }
   },
@@ -656,11 +666,17 @@
         "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "MinCutterLib/1.0.0": {
+      "type": "project",
+      "path": "../MinCutter/MinCutterLib.csproj",
+      "msbuildProject": "../MinCutter/MinCutterLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "MinCutterLib >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -695,7 +711,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projects\\C#\\Coursera\\algorithms-divide-conquer\\week4\\MinCutter\\MinCutterLib.csproj": {
+              "projectPath": "D:\\Projects\\C#\\Coursera\\algorithms-divide-conquer\\week4\\MinCutter\\MinCutterLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
