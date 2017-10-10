@@ -27,9 +27,21 @@ namespace MinCutterLib
 
         public void Execute()
         {
-            Crossings = 0;
+            bestCrossings = 0;
+            Random r = new Random(1);
 
-            MergeVertices(1, 2);
+            //int size = Vertices.Count;
+            //List<int> orderedKeys = (List<int>)Vertices.Keys;
+            //orderedKeys.Sort();
+            //while (size > 2){
+            //    int first = orderedKeys[r.Next(0, size - 1)];
+            //    int neighbors = Vertices[first].OutNeighbors.Count;
+            //    int second = Vertices[first].OutNeighbors.Keys[r.Next(0, neighbors - 1)];
+            //    MergeVertices(first, second);
+            //    size -= 1;
+            //}
+            //bestCrossings = Vertices.Keys[0].OutNeighbors.Keys[0];
+            //Crossings = bestCrossings;
         }
 
         private void MergeVertices(int first, int second)
@@ -58,5 +70,7 @@ namespace MinCutterLib
             public int Index { private set; get; }
             public Dictionary<int , int > OutNeighbors { set; get; }
         }
+
+
     }
 }
