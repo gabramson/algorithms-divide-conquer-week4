@@ -9,7 +9,7 @@ namespace MinCutTest
         [TestMethod]
         public void TestMinCutter()
         {
-            var minCutter = new MinCutter();
+            var minCutter = new MinCutter(7);
             minCutter.AddEdge(1, 2);
             minCutter.AddEdge(1, 3);
             minCutter.AddEdge(1, 4);

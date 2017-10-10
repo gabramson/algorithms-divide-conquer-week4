@@ -5,23 +5,30 @@ namespace MinCutterLib
 {
     public class MinCutter
     {
-        private Dictionary<int, Vertex> vertices = new Dictionary<int, Vertex>();
+        private VertexList vertexList = new VertexList();
         private EdgeList edgeList = new EdgeList();
+        private int iterations;
+
+        public MinCutter(int iterations)
+        {
+            this.iterations = iterations;
+        }
+
         public int Crossings { private set; get; }
 
         public void AddEdge(int first, int second)
         {
-            if (!vertices.ContainsKey(first))
+            if (!vertexList.ContainsVertex(first))
             {
-                vertices.Add(first, new Vertex(first));
+                vertexList.Add(first);
             }
-            if (!vertices.ContainsKey(second))
+            if (!vertexList.ContainsVertex(second))
             {
-                vertices.Add(second, new Vertex(second));
+                vertexList.Add(second);
             }
-            if (!vertices[first].OutNeighbors.Contains(second)){
-                vertices[first].OutNeighbors.Add(second);
-                vertices[second].OutNeighbors.Add(first);
+            if (!vertexList.ContainsNeighbor(first, second)){
+                vertexList.AddNeighbor(first, second);
+                vertexList.AddNeighbor(second, first);
                 edgeList.Add(first, second, 1);
             }
         }
@@ -31,8 +38,8 @@ namespace MinCutterLib
             var bestCrossings = int.MaxValue;
             var nextCrossings = int.MaxValue;
 
-            for (int i = 1; i <=10; i+=1) {
-                nextCrossings = SingleIteration(vertices, edgeList, i);
+            for (int i = 1; i <=iterations; i+=1) {
+                nextCrossings = SingleIteration(vertexList, edgeList, i);
                 if (nextCrossings < bestCrossings) {
                     bestCrossings = nextCrossings;
                 }
@@ -40,46 +47,50 @@ namespace MinCutterLib
             Crossings = bestCrossings;
         }
 
-        private int  SingleIteration(Dictionary<int, Vertex> inputVertices, EdgeList inputEdgeList, int seed)
+        private int  SingleIteration(VertexList inputVertexList, EdgeList inputEdgeList, int seed)
         {
-            var myVertices = new Dictionary<int, Vertex>(inputVertices);
+            var myVertexList = new VertexList(vertexList);
             var myEdgeList = new EdgeList(inputEdgeList);
             Random r = new Random(seed);
 
-            while (myVertices.Count > 2)
+            while (myVertexList.Count > 2)
             {
                 var edge = myEdgeList.SelectByIndex(r.Next(0, myEdgeList.Total - 1));
                 int first = edge.start;
                 int second = edge.end;
-                MergeVertices(first, second, myVertices, myEdgeList);
+                MergeVertices(first, second, myVertexList, myEdgeList);
             }
-            return edgeList.Total;
+            return myEdgeList.Total;
         }
 
-        private void MergeVertices(int first, int second, Dictionary<int, Vertex> vertices, EdgeList edgeList)
+        private void MergeVertices(int first, int second, VertexList vertexList, EdgeList edgeList)
         {
-            foreach(var index in vertices[second].OutNeighbors){
+            var secondNeighbors = new HashSet<int>(vertexList.GetNeighbors(second));
+            foreach (var index in secondNeighbors){
                 if (index != first)
                 {
-                    if (vertices[first].OutNeighbors.Contains(index))
+                    if (vertexList.ContainsNeighbor(first, index))
                     {
                         edgeList.Update(first, index, edgeList.GetFrequency(first, index) + edgeList.GetFrequency(second, index));
                         edgeList.Remove(second, index);
-                        vertices[index].OutNeighbors.Remove(second);
+                        vertexList.RemoveNeighbor(second, index);
+                        vertexList.RemoveNeighbor(index, second);
                     }
                     else
                     {
-                        vertices[first].OutNeighbors.Add(index);
-                        vertices[index].OutNeighbors.Add(first);
+                        vertexList.AddNeighbor(first, index);
+                        vertexList.AddNeighbor(index, first);
                         edgeList.Add(first, index, edgeList.GetFrequency(second, index));
                         edgeList.Remove(second, index);
-                        vertices[index].OutNeighbors.Remove(second);
+                        vertexList.RemoveNeighbor(second, index);
+                        vertexList.RemoveNeighbor(index, second);
                     }
                 }
             }
-            vertices[first].OutNeighbors.Remove(second);
             edgeList.Remove(first, second);
-            vertices.Remove(second);
+            vertexList.RemoveNeighbor(first, second);
+            vertexList.RemoveNeighbor(second, first);
+            vertexList.Remove(second);
         }
 
         private struct Vertex
