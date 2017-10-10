@@ -7,6 +7,20 @@ namespace MinCutterLib
     public class EdgeList
     {
         private SortedList<(int, int), Edge> edgeList = new SortedList<(int, int), Edge>();
+
+        public EdgeList(EdgeList toCopy)
+        {
+            foreach (var edge in toCopy.edgeList.Values)
+            {
+                this.Add(edge.start, edge.end, edge.frequency);
+            }
+        }
+
+        public EdgeList()
+        {
+
+        }
+
         public int Total { private set; get; } = 0;
 
         public void Add(int start, int end, int frequency)
@@ -54,6 +68,29 @@ namespace MinCutterLib
             Total -= frequencyDiff;
         }
 
+        public bool Contains(int start, int end)
+        {
+            if (start < end)
+            {
+                return edgeList.ContainsKey((start, end));
+            }
+            else
+            {
+                return edgeList.ContainsKey((end, start));
+            }
+        }
+
+        public int GetFrequency(int start, int end)
+        {
+            if (start < end)
+            {
+                return edgeList[(start, end)].frequency;
+            }
+            else
+            {
+                return edgeList[(end, start)].frequency;
+            }
+        }
 
         public Edge SelectByIndex(int index)
         {
